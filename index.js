@@ -13,7 +13,8 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-app.set("views", path.join(__dirname, "frontend/views"));
+app.set("views", path.join(__dirname, "public/views"));
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "pug");
 
 /**
@@ -24,8 +25,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/form", (req, res) => {
-    res.render("form");
+    res.render("form", { title: "Form" });
 });
+
+app.post("/form", (req, res) => {
+    res.render("form", { title: "Form", submitted: "I Submitted!" });
+});
+
 
 /**
  * Server Activation

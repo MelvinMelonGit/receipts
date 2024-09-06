@@ -3,8 +3,10 @@ extends layout
 block layout-content
   div.View
     h1.Banner Form
-    form(action="/submit")
+    form(action="/form" method="post")
       input(type="submit" value="Submit")
+
+  p #{submitted}
 
 //-           <form action="/action_page.php">
 //-   <label for="fname">First name:</label><br>
