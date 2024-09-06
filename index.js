@@ -13,7 +13,7 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "frontend/views"));
 app.set("view engine", "pug");
 
 /**
@@ -21,6 +21,10 @@ app.set("view engine", "pug");
  */
 app.get("/", (req, res) => {
     res.render("index", { title: "Home" });
+});
+
+app.get("/form", (req, res) => {
+    res.render("form");
 });
 
 /**
