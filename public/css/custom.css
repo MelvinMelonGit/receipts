@@ -1,10 +1,30 @@
+div.Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+div.Card {
+    border: 1px solid #fff;
+    display: grid;
+}
+
+div.Card form {
+    display: grid;
+}
+
+div.Card input {
+    padding: 0.5rem 1rem;
+    justify-self: end;
+}
+
 ul {
     display: flex;
     gap: 1rem;
 }
 
 li {
-    list-style-type: none;
+   list-style-type: none;
 }
 
 form input {

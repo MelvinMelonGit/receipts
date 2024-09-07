@@ -39,6 +39,20 @@ app.get("/form", (req, res) => {
     res.render("form");
 });
 
+app.post("/delete", async(req, res) => {
+    const { id } = req.body 
+
+    const { err } = await supabase
+    .from('receipt')
+    .delete()
+    .eq('id', id)
+
+    const { data, error } = await supabase.from('receipt').select()
+
+    res.render("index", { data, message: `${id} deleted!` });
+});
+
+
 app.post("/form", async(req, res) => {
 
 const {title, description, price} = req.body

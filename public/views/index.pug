@@ -3,6 +3,14 @@ extends layout
 block layout-content
   div.View
     h1.Banner Receipt
-    each val in data
-      h2= val.title
-      p= val.description
+    p #{message}
+    div.Grid
+      each val in data || []
+        div.Card
+          form(action="/delete" method="post")
+            input(type="hidden" name="id" value=`${val.id}`)
+            input(type="submit" value="X")
+          h2= val.title
+          p= val.description
+          p= val.price
+          p= val.id
