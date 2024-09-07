@@ -6,3 +6,7 @@ ul {
 li {
     list-style-type: none;
 }
+
+form input {
+    display: block
+}

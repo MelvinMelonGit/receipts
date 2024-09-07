@@ -4,9 +4,15 @@ block layout-content
   div.View
     h1.Banner Form
     form(action="/form" method="post")
+      label(for="title") Title:
+      input(type="text" id="title" name="title")
+      label(for="description") Description:
+      input(type="text" id="description" name="description")
+      label(for="price") Price:
+      input(type="number" id="price" name="price")
       input(type="submit" value="Submit")
 
-  p #{submitted}
+  p #{message}
 
 //-           <form action="/action_page.php">
 //-   <label for="fname">First name:</label><br>

@@ -2,4 +2,7 @@ extends layout
 
 block layout-content
   div.View
-    h1.Banner Receipts
+    h1.Banner Receipt
+    each val in data
+      h2= val.title
+      p= val.description
